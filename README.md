@@ -4,4 +4,4 @@ In order to effectively manage a web server, it is necessary to get feedback abo
 
 The shiny app can be accessed via [Apache Access Log Explorer](https://hui-neil-zhang.shinyapps.io/access_log_explorer/) and screenshot below shows the user interface of the dashboard.
 
-When you
+When you 
