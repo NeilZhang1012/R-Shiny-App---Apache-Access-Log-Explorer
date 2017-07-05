@@ -16,7 +16,7 @@ In addition, the number of days within your selected date range will also be sho
 
 Below is the codes I wrote to create my log file explorer, you can use it as your starting point and modify it to meet your needs and requirements.
 
-```
+```ui.R
 library(shiny)
 
 shinyUI(fluidPage(
