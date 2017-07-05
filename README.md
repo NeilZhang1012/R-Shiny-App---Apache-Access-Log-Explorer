@@ -6,4 +6,9 @@ The shiny app I created can be accessed via [Apache Access Log Explorer](https:/
 
 ![alt text](https://github.com/NeilZhang1012/R-Shiny-App---Apache-Access-Log-Explorer/blob/master/access_log_screenshot.png)
 
-When you open the web link above or run the shiny app on your local machine, an Apache access log file will be automatically downloaded and converted to a data frame in R (you can change the Apache access log file to any Apache log file you are interested in as long as you have the download link for the log file). Once you select the date range and click the **Change** button, four different plots will be generated according to the date range you selected, including *Traffic Line Chart, Status Barplot, Top 10 Referer, and Response Size Clustering Plot*. In addition
+When you open the web link above or run the shiny app on your local machine, an Apache access log file will be automatically downloaded and converted to a data frame in R (you can change the Apache access log file to any Apache log file you are interested in as long as you have the download link for the log file). Once you select the date range and click the **Change** button, four different plots will be generated according to the date range you selected, including *Traffic Line Chart, Status Barplot, Top 10 Referer, and Response Size Clustering Plot*.
+* Traffic Line Chart shows hits across time
+* Status Barplot shows the distribution of status code for different time periods
+* Top 10 Referer plot shows the top 10 sites that client reports having been referred from
+* shows the proportion of different object size returned to the client
+
