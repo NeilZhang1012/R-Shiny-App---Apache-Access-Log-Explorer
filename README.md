@@ -7,10 +7,48 @@ The shiny app I created can be accessed via [Apache Access Log Explorer](https:/
 ![alt text](https://github.com/NeilZhang1012/R-Shiny-App---Apache-Access-Log-Explorer/blob/master/access_log_screenshot.png)
 
 When you open the web link above or run the shiny app on your local machine, an Apache access log file will be automatically downloaded and converted to a data frame in R (you can change the Apache access log file to any Apache log file you are interested in as long as you have the download link for the log file). Once you select the date range and click the **Change** button, four different plots will be generated according to the date range you selected, including *Traffic Line Chart, Status Barplot, Top 10 Referer, and Response Size Clustering Plot*.
-* Traffic Line Chart shows hits across time
-* Status Barplot displays the distribution of status code for different time periods
-* Top 10 Referer plot can tell us the top 10 sites that client reports having been referred from
-* Response Size Clustering Plot shows the proportion of different object size returned to the client
+* Traffic Line Chart shows hits across time.
+* Status Barplot displays the distribution of status code for different time periods.
+* Top 10 Referer plot can tell us the top 10 sites that client reports having been referred from.
+* Response Size Clustering Plot shows the proportion of different object size returned to the client.
 
 In addition, the number of days within your selected date range will also be shown on the dashboard. If the selected end date is earlier than the start date, an error message in red color will pop up.
+
+Below is the codes I wrote to create my log file explorer, you can use it as your starting point and modify it to meet your needs and requirements.
+
+`library(shiny)
+
+shinyUI(fluidPage(
+  
+  tags$head(
+    tags$style(HTML("
+      .shiny-output-error-validation {
+        color: red;
+      }
+    "))
+  ),
+  
+  titlePanel("Log File Explorer"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      dateRangeInput("dates", label = ("Please Select Date Range"),
+                     start = "2007-02-01", end = "2007-03-16",
+                     min = "2007-02-01", max = "2007-03-16"),
+      actionButton("changeButton", "Change"),
+      hr(),
+      helpText("The end date should be later than the start date. Otherwise, no plot
+               will be created and an error message will pop up.")
+    ),
+    mainPanel(
+      textOutput("DateRange"),
+      tabsetPanel(
+        tabPanel("Traffic", plotOutput("RequestLineChart")),
+        tabPanel("Status", plotOutput("StatusBarChart")),
+        tabPanel("Top 10 Referer", plotOutput("RefererBarChart")),
+        tabPanel("Response Size Clustering", plotOutput("SizeClusterPlot"))
+      )
+    )
+  )
+))`
 
