@@ -11,5 +11,6 @@ When you open the web link above or run the shiny app on your local machine, an 
 * Status Barplot displays the distribution of status code for different time periods
 * Top 10 Referer plot can tell us the top 10 sites that client reports having been referred from
 * Response Size Clustering Plot shows the proportion of different object size returned to the client
+
 In addition, the number of days within your selected date range will also be shown on the dashboard. If the selected end date is earlier than the start date, an error message in red color will pop up.
 
